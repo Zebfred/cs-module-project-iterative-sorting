@@ -7,10 +7,17 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
+        for index in range(i, len(arr)):
+            if arr[index] < arr[smallest_index]:
+                smallest_index = index
+
 
 
         # TO-DO: swap
         # Your code here
+        cur_num = arr[i]
+        arr[i]  = arr[smallest_index]
+        arr[smallest_index] = cur_num
 
     return arr
 
@@ -18,12 +25,23 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
+    count = len(arr)
+    while count > 0:
+        current_index = 0
+        while current_index < (count - 1):
+            if arr[current_index] < arr[current_index + 1]:
+                current_index += 1
+            else:
+                num = arr[current_index + 1]
+                arr[current_index+ 1] = arr[current_index]
+                arr[current_index] = num
+        count -= 1
 
 
     return arr
 
 '''
-STRETCH: implement the Count Sort function below
+STRETCH: implement the Counting Sort function below
 
 Counting sort is a sorting algorithm that works on a set of data where
 we specifically know the maximum value that can exist in that set of
@@ -44,3 +62,5 @@ def counting_sort(arr, maximum=None):
 
 
     return arr
+
+
